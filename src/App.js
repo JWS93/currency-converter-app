@@ -1,23 +1,23 @@
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
-import ConversionTable from './ConversionTable'
-import CurrencyCalculator from './CurrencyCalculator'
+import {Routes, Route, Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoneyBillTransfer } from '@fortawesome/free-solid-svg-icons';
+import Home from './Home'
 
-function App () {
+
+export default function App () {
   return (
-    <Router>
-      <nav className="navbar navbar-light bg-light">
+    <div>
+      <nav className="navbar navbar-primary bg-light navbar-expand-md">
         <div className="container-fluid">
-          <NavLink to="/" className="navbar-brand" >
-          <FontAwesomeIcon icon="fa-solid fa-money-bill-transfer" alt="" width="30" height="24" className="d-inline-block align-text-top" />
-          Currency Converter
-          </NavLink>
+          <h1 className="navbar-brand" >
+            <FontAwesomeIcon icon={faMoneyBillTransfer} className="mx-3" />
+            Currency Calculator
+          </h1>
         </div>
       </nav>
-      <Routes>
-        <Route path="/" component={Home} />
-      </Routes>
-    </Router>
+      <Home />
+    </div>
   );
 }
 
-export default App;
+
